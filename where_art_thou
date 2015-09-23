@@ -1,0 +1,19 @@
+function where(collection, source) {
+  var arr = [];
+  // What's in a name?
+  //create a variable for the enumerable properties of the source object
+  var key = Object.keys(source);
+  //create a for loop that looks in each element of the collection
+  for(var name in collection){
+    //and it looks at the collection key of the name and compares it to that of the source key to see if they are equal
+    if(collection[name][key] === source[key]) 
+    //if they are equal, it then pushes that name/value to a new array 
+    arr.push(collection[name]);
+    //and we then return the array
+    
+    }
+  return arr;
+}
+
+
+where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });
