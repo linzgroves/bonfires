@@ -1,0 +1,14 @@
+function palindrome(str) {
+  // Good luck!
+  str = str.replace(/[^a-zA-Z0-9]/g,'').toLowerCase();
+  var newReverse = str.split('').reverse().join('');
+  
+ if(newReverse === str) {
+   return true;
+ } else {
+   return false;
+ }
+
+}
+
+palindrome("A man, a plan, a canal. Panama");
