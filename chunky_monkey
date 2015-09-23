@@ -1,0 +1,37 @@
+//Solution 1:
+
+function chunk(arr, size) {
+  // Break it up.
+  //var newArray = [[]];
+  
+  var newArray = [];
+  var len = arr.length;
+  
+  for (var i = 0; i < len; i += size)
+     newArray.push(arr.slice(i, i+size));
+  
+  return newArray;
+}
+
+chunk(['a', 'b', 'c', 'd'], 2);
+
+
+//Solution 2:
+
+function chunk(arr, size) {
+  // Break it up.
+  //var newArray = [[]];
+  
+  var newArray = [],
+      i = 0,
+      n = arr.length;
+  
+  while (i < n) {
+    newArray.push(arr.slice(i, i += size));
+  }
+   
+  
+  return newArray;
+}
+
+chunk(['a', 'b', 'c', 'd'], 2);
