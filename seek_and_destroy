@@ -1,0 +1,24 @@
+function destroyer(arr) {
+  // Remove all the values
+  //Create an empty array that will be used to separate the elements that will be used to determine what gets destroyed from the arr
+  var elemToRemove = [];
+  //Starting at 1 (to avoide the first argument, iterate through the elements in the function as long as this is less than the length of the arguments passed; push the 2nd and 3rd arguments into the empty array
+  for (var i = 1; i < arguments.length; i++)
+    elemToRemove.push(arguments[i]);
+  //Create another variable that will hold the elements that survived the comparison from the first argument
+  var whatsLeft = arguments[0].filter(function(element, index) {
+    var returnThis = true; 
+  //Create a loop that loops as many times as there are elements in the elemToRemove array; check to see if that argument[0] element is equal to the current element in the array; if they are equal, toReturn will be set to false and the the argument[0] element won't be approved by the filter method.
+  for(var i = 0; i < elemToRemove.length; i++) {
+    if (element === elemToRemove[i]) {
+      returnThis = false;
+    //However, if the two elements are not equal, nothing will happen and the returnThis value will stay true and the element will be pushed into whatsLeft
+    }
+  }
+    return returnThis;
+  });
+  return whatsLeft;
+  
+ }
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
